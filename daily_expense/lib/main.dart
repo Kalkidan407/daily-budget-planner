@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
    MaterialApp(
+    debugShowCheckedModeBanner: false,
         title: 'Daily Budget Planner',
         theme: ThemeData(
           primarySwatch: Colors.indigo,
