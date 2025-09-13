@@ -10,6 +10,7 @@ class StatsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ctrl = Provider.of<TransactionController>(context);
+    
     final data = ctrl.recentDailyTotals(days: 7);
     return Scaffold(
       appBar: AppBar(title: const Text('Statistics (Last 7 days)')),

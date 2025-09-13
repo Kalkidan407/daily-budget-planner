@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'controlles/trancaction_controller.dart';
-import 'Views/homeScreen.dart';
+import '../Controlles/trancaction_controller.dart';
+import 'Views/home_screen.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => TransactionController()),
+      ],
+      child: const MyApp()
+    ));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,19 +21,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
-    ChangeNotifierProvider(
-      create: (context) => TransactionController(),
-    
-
-    child: MaterialApp(
-      title: 'Daily Budget Planner',
-      theme: ThemeData(
-        
-        primarySwatch: Colors.indigo,
-     
+   MaterialApp(
+        title: 'Daily Budget Planner',
+        theme: ThemeData(
+          primarySwatch: Colors.indigo,
       ),
       home: const HomeScreen(),
-    ));
+    );
   }
 }
 

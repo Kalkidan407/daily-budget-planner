@@ -1,12 +1,11 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../controllers/transaction_controller.dart';
+import '../Controlles/trancaction_controller.dart';
 import '../views/add_transaction_screen.dart';
 import '../widgets/transaction_tile.dart';
-import '../widgets/simple_chart.dart';
-import 'stats_screen.dart';
+import '../Widgets/simpleChart.dart';
+import 'states_screen.dart';
 import 'package:intl/intl.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +13,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ctrl = Provider.of<TransactionController>(context);
+   // final ctrl = context.watch()<TransactionController>(context);
+   // final ctrl = context.watch<TransactionController>();
+    final ctrl = context.watch<TransactionController>();
+
+
 
     return Scaffold(
       appBar: AppBar(
